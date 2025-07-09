@@ -26,11 +26,18 @@ function colorSquares(){
 const pixels = document.querySelectorAll(".pixel");
 pixels.forEach((pixel) => {
     pixel.addEventListener("mouseenter",() => {
-    pixel.style.background = "blue";
+        const pixelColor = rgb();
+    pixel.style.background = pixelColor;
     });
 });
 }
 
+function rgb(){
+    let r = (Math.floor((Math.random()*1000))) % 255;
+    let g = (Math.floor((Math.random()*1000))) % 255;
+    let b = (Math.floor((Math.random()*1000))) % 255;
+    return `rgb(${r}, ${g}, ${b})`;
+}
 
 function noOfSquares(){
 let squares = prompt("Enter number of squares you wish in a row or a column.","Maximum 100");
